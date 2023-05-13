@@ -7,6 +7,12 @@ AWS service search utilities.
 ## Functions
 
 <dl>
+<dt><a href="#dehydratePageKeys">dehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys)</a> ⇒ <code>string</code></dt>
+<dd><p>Dehydrate a shard-keyed map of page keys into a compressed string.</p>
+</dd>
+<dt><a href="#rehydratePageKeys">rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys)</a> ⇒ <code>string</code></dt>
+<dd><p>Rehydrate a compressed string into a shard-keyed map of page keys.</p>
+</dd>
 <dt><a href="#addFilterConditionBeginsWith">addFilterConditionBeginsWith(options)</a> ⇒ <code>undefined</code></dt>
 <dd><p>Add begins_with filter condition to DynamoDB query objects.</p>
 </dd>
@@ -32,6 +38,38 @@ AWS service search utilities.
 <dd><p>Get a range sort key condition for a DynamoDB query &amp; update query objects.</p>
 </dd>
 </dl>
+
+<a name="dehydratePageKeys"></a>
+
+## dehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys) ⇒ <code>string</code>
+Dehydrate a shard-keyed map of page keys into a compressed string.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Dehydrated page keys.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entityManager | <code>EntityManager</code> | EntityManager instance. |
+| entityToken | <code>string</code> | Entity token. |
+| indexToken | <code>string</code> | Index token or array of key tokens. |
+| shardKeyToken | <code>string</code> | Shard key token. |
+| pageKeys | <code>object</code> | Rehydrated page keys. |
+
+<a name="rehydratePageKeys"></a>
+
+## rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys) ⇒ <code>string</code>
+Rehydrate a compressed string into a shard-keyed map of page keys.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - Rehydrated page keys.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entityManager | <code>EntityManager</code> | EntityManager instance. |
+| entityToken | <code>string</code> | Entity token. |
+| indexToken | <code>string</code> | Index token or array of key tokens. |
+| shardKeyToken | <code>string</code> | Shard key token. |
+| pageKeys | <code>object</code> | Dehydrated page keys. |
 
 <a name="addFilterConditionBeginsWith"></a>
 
