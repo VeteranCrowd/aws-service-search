@@ -1,3 +1,3 @@
-# aws-service
+# aws-service-search
 
-AWS service utilities.
+AWS service search utilities.
