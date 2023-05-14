@@ -13,8 +13,8 @@ AWS service search utilities.
 <dt><a href="#rehydratePageKeys">rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys)</a> ⇒ <code>string</code></dt>
 <dd><p>Rehydrate a compressed string into a shard-keyed map of page keys.</p>
 </dd>
-<dt><a href="#addFilterConditionBeginsWith">addFilterConditionBeginsWith(options)</a> ⇒ <code>undefined</code></dt>
-<dd><p>Add begins_with filter condition to DynamoDB query objects.</p>
+<dt><a href="#addFilterCondition">addFilterCondition(options)</a> ⇒ <code>undefined</code></dt>
+<dd><p>Add filter condition to DynamoDB query objects.</p>
 </dd>
 <dt><a href="#addFilterConditionExists">addFilterConditionExists(options)</a> ⇒ <code>undefined</code></dt>
 <dd><p>Add exists filter condition to DynamoDB query objects.</p>
@@ -31,8 +31,8 @@ AWS service search utilities.
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a whole number value.</p>
 </dd>
-<dt><a href="#sortKeyConditionBeginsWith">sortKeyConditionBeginsWith(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
-<dd><p>Get a begins_with sort key condition for a DynamoDB query &amp; update query objects.</p>
+<dt><a href="#sortKeyCondition">sortKeyCondition(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
+<dd><p>Get a sort key condition for a DynamoDB query &amp; update query objects.</p>
 </dd>
 <dt><a href="#sortKeyConditionRange">sortKeyConditionRange(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
 <dd><p>Get a range sort key condition for a DynamoDB query &amp; update query objects.</p>
@@ -71,10 +71,10 @@ Rehydrate a compressed string into a shard-keyed map of page keys.
 | shardKeyToken | <code>string</code> | Shard key token. |
 | pageKeys | <code>object</code> | Dehydrated page keys. |
 
-<a name="addFilterConditionBeginsWith"></a>
+<a name="addFilterCondition"></a>
 
-## addFilterConditionBeginsWith(options) ⇒ <code>undefined</code>
-Add begins_with filter condition to DynamoDB query objects.
+## addFilterCondition(options) ⇒ <code>undefined</code>
+Add filter condition to DynamoDB query objects.
 
 **Kind**: global function  
 
@@ -86,6 +86,7 @@ Add begins_with filter condition to DynamoDB query objects.
 | options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
 | options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
 | options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
+| options.operator | <code>string</code> | The operator to use for the filter condition. |
 
 <a name="addFilterConditionExists"></a>
 
@@ -165,10 +166,10 @@ Parse a string query parameter into a whole number value.
 | param | <code>string</code> | The query parameter to parse. |
 | token | <code>string</code> | The name of the query parameter. |
 
-<a name="sortKeyConditionBeginsWith"></a>
+<a name="sortKeyCondition"></a>
 
-## sortKeyConditionBeginsWith(options) ⇒ <code>string</code> \| <code>undefined</code>
-Get a begins_with sort key condition for a DynamoDB query & update query objects.
+## sortKeyCondition(options) ⇒ <code>string</code> \| <code>undefined</code>
+Get a sort key condition for a DynamoDB query & update query objects.
 
 **Kind**: global function  
 **Returns**: <code>string</code> \| <code>undefined</code> - The sort key condition.  
@@ -181,6 +182,7 @@ Get a begins_with sort key condition for a DynamoDB query & update query objects
 | options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
 | options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
 | options.item | <code>object</code> | An item containing enough data to generate the partial sort key. |
+| options.operator | <code>string</code> | The sort key operator. |
 | options.sortKeyName | <code>string</code> | The name of the sort key. |
 
 <a name="sortKeyConditionRange"></a>
