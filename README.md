@@ -25,17 +25,17 @@ AWS service search utilities.
 <dt><a href="#getShardQuery">getShardQuery(options)</a> ⇒ <code>function</code></dt>
 <dd><p>Get a shard query function for use with Entity Manager query function.</p>
 </dd>
+<dt><a href="#getSortKeyCondition">getSortKeyCondition(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
+<dd><p>Get a sort key condition for a DynamoDB query &amp; update query objects.</p>
+</dd>
+<dt><a href="#getSortKeyConditionRange">getSortKeyConditionRange(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
+<dd><p>Get a range sort key condition for a DynamoDB query &amp; update query objects.</p>
+</dd>
 <dt><a href="#parseBooleanQueryParam">parseBooleanQueryParam(param, token)</a> ⇒ <code>boolean</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a boolean value.</p>
 </dd>
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a whole number value.</p>
-</dd>
-<dt><a href="#sortKeyCondition">sortKeyCondition(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
-<dd><p>Get a sort key condition for a DynamoDB query &amp; update query objects.</p>
-</dd>
-<dt><a href="#sortKeyConditionRange">sortKeyConditionRange(options)</a> ⇒ <code>string</code> | <code>undefined</code></dt>
-<dd><p>Get a range sort key condition for a DynamoDB query &amp; update query objects.</p>
 </dd>
 </dl>
 
@@ -140,6 +140,44 @@ Get a shard query function for use with Entity Manager query function.
 | [options.scanIndexForward] | <code>boolean</code> | Whether to scan the index forward. |
 | [options.sortKeyCondition] | <code>string</code> | The sort key condition. |
 
+<a name="getSortKeyCondition"></a>
+
+## getSortKeyCondition(options) ⇒ <code>string</code> \| <code>undefined</code>
+Get a sort key condition for a DynamoDB query & update query objects.
+
+**Kind**: global function  
+**Returns**: <code>string</code> \| <code>undefined</code> - The sort key condition.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | config object |
+| options.entityManager | <code>object</code> | The entity manager. |
+| options.entityToken | <code>string</code> | The entity token. |
+| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
+| options.item | <code>object</code> | An item containing enough data to generate the partial sort key. |
+| options.operator | <code>string</code> | The sort key operator. |
+| options.sortKeyName | <code>string</code> | The name of the sort key. |
+
+<a name="getSortKeyConditionRange"></a>
+
+## getSortKeyConditionRange(options) ⇒ <code>string</code> \| <code>undefined</code>
+Get a range sort key condition for a DynamoDB query & update query objects.
+
+**Kind**: global function  
+**Returns**: <code>string</code> \| <code>undefined</code> - The sort key condition.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | config object |
+| options.entityManager | <code>object</code> | The entity manager. |
+| options.entityToken | <code>string</code> | The entity token. |
+| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
+| options.itemFrom | <code>object</code> | An item containing enough data to generate the 'from' sort key. |
+| options.itemTo | <code>object</code> | An item containing enough data to generate the 'to' sort key. |
+| options.sortKeyName | <code>string</code> | The name of the sort key. |
+
 <a name="parseBooleanQueryParam"></a>
 
 ## parseBooleanQueryParam(param, token) ⇒ <code>boolean</code> \| <code>undefined</code>
@@ -165,44 +203,6 @@ Parse a string query parameter into a whole number value.
 | --- | --- | --- |
 | param | <code>string</code> | The query parameter to parse. |
 | token | <code>string</code> | The name of the query parameter. |
-
-<a name="sortKeyCondition"></a>
-
-## sortKeyCondition(options) ⇒ <code>string</code> \| <code>undefined</code>
-Get a sort key condition for a DynamoDB query & update query objects.
-
-**Kind**: global function  
-**Returns**: <code>string</code> \| <code>undefined</code> - The sort key condition.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | config object |
-| options.entityManager | <code>object</code> | The entity manager. |
-| options.entityToken | <code>string</code> | The entity token. |
-| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
-| options.item | <code>object</code> | An item containing enough data to generate the partial sort key. |
-| options.operator | <code>string</code> | The sort key operator. |
-| options.sortKeyName | <code>string</code> | The name of the sort key. |
-
-<a name="sortKeyConditionRange"></a>
-
-## sortKeyConditionRange(options) ⇒ <code>string</code> \| <code>undefined</code>
-Get a range sort key condition for a DynamoDB query & update query objects.
-
-**Kind**: global function  
-**Returns**: <code>string</code> \| <code>undefined</code> - The sort key condition.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | config object |
-| options.entityManager | <code>object</code> | The entity manager. |
-| options.entityToken | <code>string</code> | The entity token. |
-| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
-| options.itemFrom | <code>object</code> | An item containing enough data to generate the 'from' sort key. |
-| options.itemTo | <code>object</code> | An item containing enough data to generate the 'to' sort key. |
-| options.sortKeyName | <code>string</code> | The name of the sort key. |
 
 
 ---
