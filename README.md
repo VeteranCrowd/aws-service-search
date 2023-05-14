@@ -128,17 +128,17 @@ Get a shard query function for use with Entity Manager query function.
 **Kind**: global function  
 **Returns**: <code>function</code> - The shard query function.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | config object |
-| options.dbClient | <code>object</code> | The Wrapped DynamoDB client. |
-| [options.expressionAttributeNames] | <code>object</code> | The expression attribute names object. |
-| [options.expressionAttributeValues] | <code>object</code> | The expression attribute values object. |
-| [options.filterConditions] | <code>Array.&lt;string&gt;</code> | The filter conditions array. |
-| [options.indexName] | <code>string</code> | The name of the index to query. |
-| options.partitionKeyName | <code>string</code> | The name of the partition key. |
-| [options.scanIndexForward] | <code>boolean</code> | Whether to scan the index forward. |
-| [options.sortKeyCondition] | <code>string</code> | The sort key condition. |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>object</code> |  | config object |
+| options.dbClient | <code>object</code> |  | The Wrapped DynamoDB client. |
+| [options.expressionAttributeNames] | <code>object</code> |  | The expression attribute names object. |
+| [options.expressionAttributeValues] | <code>object</code> |  | The expression attribute values object. |
+| [options.filterConditions] | <code>Array.&lt;string&gt;</code> |  | The filter conditions array. |
+| [options.indexName] | <code>string</code> |  | The name of the index to query. |
+| options.partitionKeyName | <code>string</code> |  | The name of the partition key. |
+| [options.scanIndexForward] | <code>boolean</code> | <code>true</code> | Whether to scan the index forward. |
+| [options.sortKeyCondition] | <code>string</code> |  | The sort key condition. |
 
 <a name="getSortKeyCondition"></a>
 
