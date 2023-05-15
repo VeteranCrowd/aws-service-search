@@ -131,7 +131,7 @@ Get a shard query function for use with Entity Manager query function.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | options | <code>object</code> |  | config object |
-| options.dbClient | <code>object</code> |  | The Wrapped DynamoDB client. |
+| options.dbClient | <code>WrappedDynamoDbClient</code> |  | The Wrapped DynamoDB client. |
 | [options.expressionAttributeNames] | <code>object</code> |  | The expression attribute names object. |
 | [options.expressionAttributeValues] | <code>object</code> |  | The expression attribute values object. |
 | [options.filterConditions] | <code>Array.&lt;string&gt;</code> |  | The filter conditions array. |
@@ -151,7 +151,7 @@ Get a sort key condition for a DynamoDB query & update query objects.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | config object |
-| options.entityManager | <code>object</code> | The entity manager. |
+| options.entityManager | <code>EntityManager</code> | The entity manager. |
 | options.entityToken | <code>string</code> | The entity token. |
 | options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
 | options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
@@ -170,7 +170,7 @@ Get a range sort key condition for a DynamoDB query & update query objects.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | config object |
-| options.entityManager | <code>object</code> | The entity manager. |
+| options.entityManager | <code>EntityManager</code> | The entity manager. |
 | options.entityToken | <code>string</code> | The entity token. |
 | options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
 | options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
