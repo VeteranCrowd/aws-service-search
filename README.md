@@ -78,15 +78,16 @@ Add filter condition to DynamoDB query objects.
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | config object |
-| options.attributeName | <code>string</code> | The name of the attribute to filter on. |
-| options.attributeValue | <code>string</code> | The beginning value of the attribute to filter on. |
-| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
-| options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
-| options.operator | <code>string</code> | The operator to use for the filter condition. |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>object</code> |  | config object |
+| options.attributeName | <code>string</code> |  | The name of the attribute to filter on. |
+| options.attributeValue | <code>string</code> |  | The beginning value of the attribute to filter on. |
+| options.expressionAttributeNames | <code>object</code> |  | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> |  | The expression attribute values object to add the attribute value to. |
+| options.filterConditions | <code>Array.&lt;string&gt;</code> |  | The filter conditions array to add the filter condition to. |
+| [options.negate] | <code>boolean</code> | <code>false</code> | Whether to negate the filter condition. |
+| options.operator | <code>string</code> |  | The operator to use for the filter condition. |
 
 <a name="addFilterConditionExists"></a>
 
@@ -110,15 +111,16 @@ Add range filter condition to DynamoDB query objects.
 
 **Kind**: global function  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | config object |
-| options.attributeName | <code>string</code> | The name of the attribute to filter on. |
-| [options.attributeValueFrom] | <code>string</code> | The beginning value of the attribute to filter on. |
-| [options.attributeValueTo] | <code>string</code> | The ending value of the attribute to filter on. |
-| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
-| options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>object</code> |  | config object |
+| options.attributeName | <code>string</code> |  | The name of the attribute to filter on. |
+| [options.attributeValueFrom] | <code>string</code> |  | The beginning value of the attribute to filter on. |
+| [options.attributeValueTo] | <code>string</code> |  | The ending value of the attribute to filter on. |
+| options.expressionAttributeNames | <code>object</code> |  | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> |  | The expression attribute values object to add the attribute value to. |
+| options.filterConditions | <code>Array.&lt;string&gt;</code> |  | The filter conditions array to add the filter condition to. |
+| [options.negate] | <code>boolean</code> | <code>false</code> | Whether to negate the filter condition. |
 
 <a name="getShardQuery"></a>
 
