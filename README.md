@@ -34,6 +34,9 @@ AWS service search utilities.
 <dt><a href="#parseBooleanQueryParam">parseBooleanQueryParam(param, token)</a> ⇒ <code>boolean</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a boolean value.</p>
 </dd>
+<dt><a href="#parseDelimitedQueryParam">parseDelimitedQueryParam(param, token, [enumeration], [delimiter])</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>Parse a delimited string query parameter into an array, optionally against an enumeration.</p>
+</dd>
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a whole number value.</p>
 </dd>
@@ -192,6 +195,21 @@ Parse a string query parameter into a boolean value.
 | --- | --- | --- |
 | param | <code>string</code> | The query parameter to parse. |
 | token | <code>string</code> | The name of the query parameter. |
+
+<a name="parseDelimitedQueryParam"></a>
+
+## parseDelimitedQueryParam(param, token, [enumeration], [delimiter]) ⇒ <code>Array.&lt;string&gt;</code>
+Parse a delimited string query parameter into an array, optionally against an enumeration.
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - The parsed string array.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| param | <code>string</code> |  | The query parameter to parse. |
+| token | <code>string</code> |  | The name of the query parameter. |
+| [enumeration] | <code>object</code> |  | The enumeration to parse against. |
+| [delimiter] | <code>string</code> | <code>&quot;~&quot;</code> | The delimiter to split the string on. |
 
 <a name="parseWholeNumberQueryParam"></a>
 
