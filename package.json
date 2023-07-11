@@ -33,9 +33,9 @@
     "@babel/plugin-syntax-import-assertions": "^7.22.5",
     "@babel/preset-env": "^7.22.7",
     "@babel/register": "^7.22.5",
-    "@karmaniverous/get-dotenv": "^3.1.12",
     "@karmaniverous/tagged-templates": "^0.1.1",
     "@types/node": "^20.4.1",
+    "@veterancrowd/aws-cli": "^4.3.1",
     "chai": "^4.3.7",
     "concat-md": "^0.5.1",
     "eslint": "^8.44.0",
@@ -79,7 +79,7 @@
     "lint": "eslint lib/**",
     "prerelease": "npm run lint && npm run test && npm run doc",
     "release": "release-it",
-    "test": "getdotenv -c \"mocha\" -p ./ ./env -d dev -y ./env/dynamic.js"
+    "test": "vc -c \"mocha\""
   },
   "type": "module"
 }
