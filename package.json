@@ -19,7 +19,7 @@
   ],
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@karmaniverous/entity-manager": "^4.3.0-2",
+    "@karmaniverous/entity-manager": "^4.3.0",
     "@veterancrowd/wrapped-dynamodb-client": "^1.2.2",
     "boolean": "^3.2.0",
     "http-errors": "^2.0.0",
