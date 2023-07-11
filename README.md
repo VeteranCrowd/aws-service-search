@@ -34,6 +34,9 @@ AWS service search utilities.
 <dt><a href="#parseBooleanQueryParam">parseBooleanQueryParam(param, token)</a> ⇒ <code>boolean</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a boolean value.</p>
 </dd>
+<dt><a href="#parseDelimitedQueryParam">parseDelimitedQueryParam(param, token, [enumeration], [delimiter])</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>Parse a delimited string query parameter into an array, optionally against an enumeration.</p>
+</dd>
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a whole number value.</p>
 </dd>
@@ -78,16 +81,16 @@ Add filter condition to DynamoDB query objects.
 
 **Kind**: global function  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| options | <code>object</code> |  | config object |
-| options.attributeName | <code>string</code> |  | The name of the attribute to filter on. |
-| options.attributeValue | <code>string</code> |  | The beginning value of the attribute to filter on. |
-| options.expressionAttributeNames | <code>object</code> |  | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> |  | The expression attribute values object to add the attribute value to. |
-| options.filterConditions | <code>Array.&lt;string&gt;</code> |  | The filter conditions array to add the filter condition to. |
-| [options.negate] | <code>boolean</code> | <code>false</code> | Whether to negate the filter condition. |
-| options.operator | <code>string</code> |  | The operator to use for the filter condition. |
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | config object |
+| options.attributeName | <code>string</code> | The name of the attribute to filter on. |
+| options.attributeValue | <code>string</code> | The beginning value of the attribute to filter on. |
+| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
+| options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
+| [options.negate] | <code>boolean</code> | Whether to negate the filter condition. |
+| options.operator | <code>string</code> | The operator to use for the filter condition. |
 
 <a name="addFilterConditionExists"></a>
 
@@ -111,16 +114,16 @@ Add range filter condition to DynamoDB query objects.
 
 **Kind**: global function  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| options | <code>object</code> |  | config object |
-| options.attributeName | <code>string</code> |  | The name of the attribute to filter on. |
-| [options.attributeValueFrom] | <code>string</code> |  | The beginning value of the attribute to filter on. |
-| [options.attributeValueTo] | <code>string</code> |  | The ending value of the attribute to filter on. |
-| options.expressionAttributeNames | <code>object</code> |  | The expression attribute names object to add the attribute name to. |
-| options.expressionAttributeValues | <code>object</code> |  | The expression attribute values object to add the attribute value to. |
-| options.filterConditions | <code>Array.&lt;string&gt;</code> |  | The filter conditions array to add the filter condition to. |
-| [options.negate] | <code>boolean</code> | <code>false</code> | Whether to negate the filter condition. |
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | config object |
+| options.attributeName | <code>string</code> | The name of the attribute to filter on. |
+| [options.attributeValueFrom] | <code>string</code> | The beginning value of the attribute to filter on. |
+| [options.attributeValueTo] | <code>string</code> | The ending value of the attribute to filter on. |
+| options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
+| options.expressionAttributeValues | <code>object</code> | The expression attribute values object to add the attribute value to. |
+| options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
+| [options.negate] | <code>boolean</code> | Whether to negate the filter condition. |
 
 <a name="getShardQuery"></a>
 
@@ -130,17 +133,17 @@ Get a shard query function for use with Entity Manager query function.
 **Kind**: global function  
 **Returns**: <code>function</code> - The shard query function.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| options | <code>object</code> |  | config object |
-| options.dbClient | <code>WrappedDynamoDbClient</code> |  | The Wrapped DynamoDB client. |
-| [options.expressionAttributeNames] | <code>object</code> |  | The expression attribute names object. |
-| [options.expressionAttributeValues] | <code>object</code> |  | The expression attribute values object. |
-| [options.filterConditions] | <code>Array.&lt;string&gt;</code> |  | The filter conditions array. |
-| [options.indexName] | <code>string</code> |  | The name of the index to query. |
-| options.partitionKeyName | <code>string</code> |  | The name of the partition key. |
-| [options.scanIndexForward] | <code>boolean</code> | <code>true</code> | Whether to scan the index forward. |
-| [options.sortKeyCondition] | <code>string</code> |  | The sort key condition. |
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | config object |
+| options.dbClient | <code>WrappedDynamoDbClient</code> | The Wrapped DynamoDB client. |
+| [options.expressionAttributeNames] | <code>object</code> | The expression attribute names object. |
+| [options.expressionAttributeValues] | <code>object</code> | The expression attribute values object. |
+| [options.filterConditions] | <code>Array.&lt;string&gt;</code> | The filter conditions array. |
+| [options.indexName] | <code>string</code> | The name of the index to query. |
+| options.partitionKeyName | <code>string</code> | The name of the partition key. |
+| [options.scanIndexForward] | <code>boolean</code> | Whether to scan the index forward. |
+| [options.sortKeyCondition] | <code>string</code> | The sort key condition. |
 
 <a name="getSortKeyCondition"></a>
 
@@ -192,6 +195,21 @@ Parse a string query parameter into a boolean value.
 | --- | --- | --- |
 | param | <code>string</code> | The query parameter to parse. |
 | token | <code>string</code> | The name of the query parameter. |
+
+<a name="parseDelimitedQueryParam"></a>
+
+## parseDelimitedQueryParam(param, token, [enumeration], [delimiter]) ⇒ <code>Array.&lt;string&gt;</code>
+Parse a delimited string query parameter into an array, optionally against an enumeration.
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - The parsed string array.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| param | <code>string</code> | The query parameter to parse. |
+| token | <code>string</code> | The name of the query parameter. |
+| [enumeration] | <code>object</code> | The enumeration to parse against. |
+| [delimiter] | <code>string</code> | The delimiter to split the string on. |
 
 <a name="parseWholeNumberQueryParam"></a>
 
