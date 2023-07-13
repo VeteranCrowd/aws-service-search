@@ -1,6 +1,6 @@
 {
   "name": "@veterancrowd/aws-service-search",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publishConfig": {
     "access": "public"
   },
@@ -20,21 +20,21 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@karmaniverous/entity-manager": "^4.3.0",
-    "@veterancrowd/wrapped-dynamodb-client": "^1.2.2",
+    "@veterancrowd/wrapped-dynamodb-client": "^1.2.3",
     "boolean": "^3.2.0",
     "http-errors": "^2.0.0",
     "lodash": "^4.17.21",
     "lz-string": "^1.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.22.6",
-    "@babel/core": "^7.22.8",
-    "@babel/eslint-parser": "^7.22.7",
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/eslint-parser": "^7.22.9",
     "@babel/plugin-syntax-import-assertions": "^7.22.5",
-    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-env": "^7.22.9",
     "@babel/register": "^7.22.5",
     "@karmaniverous/tagged-templates": "^0.1.1",
-    "@types/node": "^20.4.1",
+    "@types/node": "^20.4.2",
     "@veterancrowd/aws-cli": "^4.3.1",
     "chai": "^4.3.7",
     "concat-md": "^0.5.1",
