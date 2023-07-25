@@ -20,7 +20,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@karmaniverous/entity-manager": "^4.3.0",
-    "@veterancrowd/wrapped-dynamodb-client": "^1.2.3",
+    "@veterancrowd/wrapped-dynamodb-client": "^1.2.4",
     "boolean": "^3.2.0",
     "http-errors": "^2.0.0",
     "lodash": "^4.17.21",
@@ -34,8 +34,8 @@
     "@babel/preset-env": "^7.22.9",
     "@babel/register": "^7.22.5",
     "@karmaniverous/tagged-templates": "^0.1.1",
-    "@types/node": "^20.4.3",
-    "@veterancrowd/aws-cli": "^4.3.5",
+    "@types/node": "^20.4.4",
+    "@veterancrowd/aws-cli": "^4.3.6",
     "auto-changelog": "^2.4.0",
     "chai": "^4.3.7",
     "concat-md": "^0.5.1",
@@ -47,7 +47,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-yml": "^1.8.0",
     "jsdoc-to-markdown": "^8.0.0",
-    "lefthook": "^1.4.6",
+    "lefthook": "^1.4.7",
     "mocha": "^10.2.0",
     "nanoid": "^4.0.2",
     "release-it": "^16.1.3"
