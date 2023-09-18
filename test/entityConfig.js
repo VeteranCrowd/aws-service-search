@@ -6,6 +6,7 @@ export default {
       indexes: {
         created: ['entityPK', 'entitySK', 'created'],
         displayNameCanonical: ['entityPK', 'entitySK', 'displayNameCanonical'],
+        otherCreated: ['entityPK', 'entitySK', 'otherPK', 'created'],
         updated: ['entityPK', 'entitySK', 'updated'],
       },
       keys: {
@@ -15,6 +16,16 @@ export default {
             `${entityToken}!${sn2e`${shardId}`}`,
           decode: (value) =>
             value.match(/^(?<entityToken>.*)!(?<shardId>.*)$/)?.groups,
+        },
+
+        // Other PK.
+        otherPK: {
+          encode: ({ entityToken = 'group', otherId, shardId }) =>
+            sn2u`${entityToken}!${sn2e`${shardId}`}|otherId#${otherId}`,
+          decode: (value) =>
+            value.match(
+              /^(?<entityToken>.*)!(?<shardId>.*)\|otherId#(?<otherId>.*)$/
+            )?.groups,
         },
 
         // Entity SK.
