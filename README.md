@@ -7,11 +7,14 @@ AWS service search utilities.
 ## Functions
 
 <dl>
-<dt><a href="#dehydratePageKeys">dehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys)</a> ⇒ <code>string</code></dt>
-<dd><p>Dehydrate a shard-keyed map of page keys into a compressed string.</p>
+<dt><a href="#dehydratePageKeys">dehydratePageKeys(entityManager, entityToken, indexTokens, shardKeyTokens, pageKeys, [logger])</a> ⇒ <code>string</code></dt>
+<dd><p>Dehydrate a shard-keyed map of page keys into a compressed string. Supports multiple paged queries on different indexes.
+In this case, present indexTokens, shardKeyTokens, and pageKeys as arrays of the same length. If all pageKeys entries are
+empty objects, returns an empty string.</p>
 </dd>
-<dt><a href="#rehydratePageKeys">rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys)</a> ⇒ <code>string</code></dt>
-<dd><p>Rehydrate a compressed string into a shard-keyed map of page keys.</p>
+<dt><a href="#rehydratePageKeys">rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys, [logger])</a> ⇒ <code>string</code></dt>
+<dd><p>Rehydrate a single shardKeyToken&#39;s shard-keyed map of page keys from a dehydrated map, possibly representing
+multiple shardKeyTokens.</p>
 </dd>
 <dt><a href="#addFilterCondition">addFilterCondition(options)</a> ⇒ <code>undefined</code></dt>
 <dd><p>Add filter condition to DynamoDB query objects.</p>
@@ -44,8 +47,8 @@ AWS service search utilities.
 
 <a name="dehydratePageKeys"></a>
 
-## dehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys) ⇒ <code>string</code>
-Dehydrate a shard-keyed map of page keys into a compressed string.
+## dehydratePageKeys(entityManager, entityToken, indexTokens, shardKeyTokens, pageKeys, [logger]) ⇒ <code>string</code>
+Dehydrate a shard-keyed map of page keys into a compressed string. Supports multiple paged queries on different indexes.In this case, present indexTokens, shardKeyTokens, and pageKeys as arrays of the same length. If all pageKeys entries areempty objects, returns an empty string.
 
 **Kind**: global function  
 **Returns**: <code>string</code> - Dehydrated page keys.  
@@ -54,14 +57,15 @@ Dehydrate a shard-keyed map of page keys into a compressed string.
 | --- | --- | --- |
 | entityManager | <code>EntityManager</code> | EntityManager instance. |
 | entityToken | <code>string</code> | Entity token. |
-| indexToken | <code>string</code> | Index token or array of key tokens. |
-| shardKeyToken | <code>string</code> | Shard key token. |
-| pageKeys | <code>object</code> | Rehydrated page keys. |
+| indexTokens | <code>Array.&lt;string&gt;</code> | Index token or array of key tokens. May be an array of same, of the same length as pageKeys. |
+| shardKeyTokens | <code>string</code> \| <code>Array.&lt;string&gt;</code> | Shard key token. May be an array of same, of the same length as pageKeys. |
+| pageKeys | <code>object</code> \| <code>Array.&lt;object&gt;</code> | Rehydrated page keys. May be an array of same. |
+| [logger] | <code>object</code> | Logger (defaults to console). |
 
 <a name="rehydratePageKeys"></a>
 
-## rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys) ⇒ <code>string</code>
-Rehydrate a compressed string into a shard-keyed map of page keys.
+## rehydratePageKeys(entityManager, entityToken, indexToken, shardKeyToken, pageKeys, [logger]) ⇒ <code>string</code>
+Rehydrate a single shardKeyToken's shard-keyed map of page keys from a dehydrated map, possibly representingmultiple shardKeyTokens.
 
 **Kind**: global function  
 **Returns**: <code>string</code> - Rehydrated page keys.  
@@ -73,6 +77,7 @@ Rehydrate a compressed string into a shard-keyed map of page keys.
 | indexToken | <code>string</code> | Index token or array of key tokens. |
 | shardKeyToken | <code>string</code> | Shard key token. |
 | pageKeys | <code>object</code> | Dehydrated page keys. |
+| [logger] | <code>object</code> | Logger (defaults to console). |
 
 <a name="addFilterCondition"></a>
 
