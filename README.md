@@ -1,3 +1,5 @@
+[![Backup Status](https://cloudback.it/badge/VeteranCrowd/aws-service-search)](https://cloudback.it)
+
 # aws-service-search
 
 AWS service search utilities.
@@ -39,6 +41,9 @@ multiple shardKeyTokens.</p>
 </dd>
 <dt><a href="#parseDelimitedQueryParam">parseDelimitedQueryParam(param, token, [enumeration], [delimiter])</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>Parse a delimited string query parameter into an array, optionally against an enumeration.</p>
+</dd>
+<dt><a href="#parseNumberQueryParam">parseNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
+<dd><p>Parse a string query parameter into a number value.</p>
 </dd>
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
 <dd><p>Parse a string query parameter into a whole number value.</p>
@@ -215,6 +220,19 @@ Parse a delimited string query parameter into an array, optionally against an en
 | token | <code>string</code> | The name of the query parameter. |
 | [enumeration] | <code>object</code> | The enumeration to parse against. |
 | [delimiter] | <code>string</code> | The delimiter to split the string on. |
+
+<a name="parseNumberQueryParam"></a>
+
+## parseNumberQueryParam(param, token) ⇒ <code>number</code> \| <code>undefined</code>
+Parse a string query parameter into a number value.
+
+**Kind**: global function  
+**Returns**: <code>number</code> \| <code>undefined</code> - The parsed number value.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| param | <code>string</code> | The query parameter to parse. |
+| token | <code>string</code> | The name of the query parameter. |
 
 <a name="parseWholeNumberQueryParam"></a>
 
