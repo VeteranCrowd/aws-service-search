@@ -1,6 +1,6 @@
 {
   "name": "@veterancrowd/aws-service-search",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "publishConfig": {
     "access": "public"
   },
