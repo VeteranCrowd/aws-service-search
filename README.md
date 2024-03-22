@@ -46,7 +46,7 @@ multiple shardKeyTokens.</p>
 <dd><p>Parse a string query parameter into a number value.</p>
 </dd>
 <dt><a href="#parseWholeNumberQueryParam">parseWholeNumberQueryParam(param, token)</a> ⇒ <code>number</code> | <code>undefined</code></dt>
-<dd><p>Parse a string query parameter into a whole number value.</p>
+<dd><p>Parse a string query parameter into a whole number value. &#39;all&#39; returns Infinity.</p>
 </dd>
 </dl>
 
@@ -237,7 +237,7 @@ Parse a string query parameter into a number value.
 <a name="parseWholeNumberQueryParam"></a>
 
 ## parseWholeNumberQueryParam(param, token) ⇒ <code>number</code> \| <code>undefined</code>
-Parse a string query parameter into a whole number value.
+Parse a string query parameter into a whole number value. 'all' returns Infinity.
 
 **Kind**: global function  
 **Returns**: <code>number</code> \| <code>undefined</code> - The parsed whole number value.  
