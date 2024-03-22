@@ -3,6 +3,8 @@ import { sn2e, sn2u } from '@karmaniverous/tagged-templates';
 export default {
   entities: {
     group: {
+      defaultLimit: 10,
+      defaultPageSize: 10,
       indexes: {
         created: ['entityPK', 'entitySK', 'created'],
         displayNameCanonical: ['entityPK', 'entitySK', 'displayNameCanonical'],
