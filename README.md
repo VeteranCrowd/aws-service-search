@@ -112,10 +112,11 @@ Add exists filter condition to DynamoDB query objects.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | config object |
-| options.attributeName | <code>string</code> | The name of the attribute to filter on. |
-| [options.exists] | <code>boolean</code> | The value indicating whether the attribute should exist or not. |
+| options.attributeName | <code>string</code> \| <code>Array.&lt;string&gt;</code> | The name of the attribute to filter on. |
+| [options.exists] | <code>boolean</code> \| <code>Array.&lt;boolean&gt;</code> | The value indicating whether the attribute should exist or not. |
 | options.expressionAttributeNames | <code>object</code> | The expression attribute names object to add the attribute name to. |
 | options.filterConditions | <code>Array.&lt;string&gt;</code> | The filter conditions array to add the filter condition to. |
+| [options.operator] | <code>&#x27;AND&#x27;</code> \| <code>&#x27;OR&#x27;</code> | The operator to use for the filter condition. |
 
 <a name="addFilterConditionRange"></a>
 
