@@ -20,7 +20,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@karmaniverous/entity-manager": "^5.0.9",
-    "@veterancrowd/wrapped-dynamodb-client": "^1.6.23",
+    "@veterancrowd/wrapped-dynamodb-client": "^1.8.0",
     "boolean": "^3.2.0",
     "http-errors": "^2.0.0",
     "lodash": "^4.17.21",
@@ -35,7 +35,7 @@
     "@babel/register": "^7.27.1",
     "@karmaniverous/tagged-templates": "^0.1.2",
     "@types/node": "^20.19.6",
-    "@veterancrowd/aws-cli": "^6.1.4",
+    "@veterancrowd/aws-cli": "^6.2.1",
     "auto-changelog": "^2.5.0",
     "chai": "^5.2.1",
     "concat-md": "^0.5.1",
